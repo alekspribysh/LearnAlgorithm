@@ -4,19 +4,20 @@
 public class Recursia {
 
     public static void main(String[] args) {
-        int n = 212;
+        int n = 8818;
         int k = 68;
 
-        int[] array = {11, 12, 1, 11, 3, 6, 5, 4, 11};
+        int[] array = {11, 12, 1, 11, 3, 6, 5, 4, 11, 11};
         int index = 0;
-        int le = array.length;
+
 
         //System.out.println(factorial(n));
         //System.out.println(febonachi(n));
         // System.out.println(gcd2(n, k));
         //System.out.println(ears(n));
         // System.out.println(count7(n));
-        System.out.println(array11(array, index));
+        //System.out.println(array11(array, index));
+        System.out.println(count8(n));
 
 
     }
@@ -92,11 +93,11 @@ public class Recursia {
     }
 
 
-
     public static int array11(int[] array, int index) {
 
+        int le = array.length - index;
 
-        if (array.length  != 0) {
+        if (le == 0) {
             return 0;
         }
 
@@ -104,12 +105,26 @@ public class Recursia {
 
         if (array[index] == 11) {
             count = count + 1;
-            array.
 
         }
 
-
         return count;
+
+    }
+
+    public static int count8(int n) {
+
+        int count;
+        if (n < 8) {
+            return 0;
+        }
+        if (n % 10 == 8) {
+            count = 1;
+        } else {
+            count = 0;
+        }
+
+        return count + count8(n / 10);
 
 
     }
