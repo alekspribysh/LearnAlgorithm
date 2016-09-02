@@ -9,17 +9,16 @@ public class insertionPartI {
 
 
     public static void main(String[] args) {
-        int [] ar = {2,4,6,8,3};
+        int [] ar = {2,4,6,8,3, 21, -8, 14, 1, 1 };
 
-        insertIntoSorted(ar);
+       // insertIntoSorted(ar);
+        insert(ar);
+        printArray(ar);
 
 
 
 
     }
-
-
-
 
 
 
@@ -49,6 +48,28 @@ public class insertionPartI {
         }
         System.out.println("");
     }
+
+    public static void insert(int [] arr){
+
+
+        for (int i = 0; i < arr.length; i++){
+
+            for(int j = i+1; j > 0 && j < arr.length; j--){
+
+                if (arr[j] < arr[j-1]){
+
+                    int temp = arr [j];
+                    arr[j] = arr [j-1];
+                    arr[j-1] = temp;
+
+                }
+            }
+        }
+
+
+    }
+
+
 
 }
 

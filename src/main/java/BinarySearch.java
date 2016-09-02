@@ -15,31 +15,37 @@ public class BinarySearch {
     }
 
 
-    public int binarySearch (int [] arr, int key){
+    public int binarySearch(int [] arr, int key) {
 
-        int low = 0;
+
         int high = arr.length-1;
-
-        int middle = (high - low)/2;
+        int low = 0;
 
         while (high >= low){
 
-            if (arr[middle] == arr[key]){
-                return middle;
+            int mid = (low + high)/2;
+
+
+            if (arr [mid] ==key){
+                return mid;
+
             }
 
-            if (arr[middle] > arr[key]){
+            if (arr[mid] < key){
 
-                high = middle -1;
-            }else {
-                low = middle +1;
+                low = mid+1;
             }
+            else {
+                high = mid -1;
+            }
+
 
 
         }
 
 
-       return -1;
+
+     return -1;
     }
 
 }
